@@ -126,9 +126,9 @@ function checkPassword() {
         updateDots();
 
         if (attempts < MAX_ATTEMPTS) {
-            msg.textContent = "You don't remember ? 🥺";
+            msg.textContent = "You don't remember ? 😭";
             // Swap to sad gif
-            passcodeGif.src = 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGc4NWZuNm85c3J3OHd6YjVtNWZ6aTVueHdkM3Bxemk5NjI3eTZnMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKMt1VVNkHV2PaE/giphy.gif';
+            passcodeGif.src = 'css/gifs/cry.gif';
         } else {
             // Max attempts — lockout
             locked = true;
