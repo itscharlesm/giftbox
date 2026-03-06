@@ -163,9 +163,9 @@ function startCountdown() {
             document.querySelector('.passcode-dots').style.display = 'flex';
             document.querySelector('#passcode-gif-wrap').style.display = '';
             numpad.style.display = 'grid';
-            msg.textContent = 'Try again 💌';
+            msg.textContent = 'Okay... Try again 🫣';
             // Restore cute gif
-            $('passcodeGif').src = 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTFzaHVpNmhoYzdrMm14NHBkcjQxaTlieW1oOXoydzE1NGd3ZTBxeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26uf2JHNV0Tq3ugkE/giphy.gif';
+            $('passcodeGif').src = 'css/gifs/try.gif';
         }
     }, 1000);
 }
