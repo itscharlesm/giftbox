@@ -132,9 +132,12 @@ function checkPassword() {
         } else {
             // Max attempts — lockout
             locked = true;
-            numpad.style.opacity = '0.3';
-            numpad.style.pointerEvents = 'none';
             msg.textContent = '';
+            document.querySelector('.passcode-title').style.display = 'none';
+            document.querySelector('.passcode-hint').style.display = 'none';
+            document.querySelector('.passcode-dots').style.display = 'none';
+            document.querySelector('#passcode-gif-wrap').style.display = 'none';
+            numpad.style.display = 'none';
             countdownWrap.classList.remove('hidden');
             startCountdown();
         }
@@ -155,8 +158,11 @@ function startCountdown() {
             input = '';
             updateDots();
             countdownWrap.classList.add('hidden');
-            numpad.style.opacity = '1';
-            numpad.style.pointerEvents = 'auto';
+            document.querySelector('.passcode-title').style.display = '';
+            document.querySelector('.passcode-hint').style.display = '';
+            document.querySelector('.passcode-dots').style.display = 'flex';
+            document.querySelector('#passcode-gif-wrap').style.display = '';
+            numpad.style.display = 'grid';
             msg.textContent = 'Try again 💌';
             // Restore cute gif
             $('passcodeGif').src = 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTFzaHVpNmhoYzdrMm14NHBkcjQxaTlieW1oOXoydzE1NGd3ZTBxeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26uf2JHNV0Tq3ugkE/giphy.gif';
