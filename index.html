@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Giftbox</title>
+    <link rel='stylesheet'
+        href='https://fonts.googleapis.com/css2?family=Short+Stack&amp;family=Homemade+Apple&amp;display=swap'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="css/images/logo.png">
+</head>
+
+<body>
+    <!-- Developed by Charles  -->
+    <audio id="bgMusic" src="css/music/those_eyes.mp3" loop></audio>
+
+    <script>
+        const audio = document.getElementById("bgMusic");
+
+        // Try to play after any user interaction
+        function enableAudioPlayback() {
+            audio.play().catch(err => {
+                console.log("Playback failed:", err);
+            });
+            // Remove the listener after first interaction
+            document.removeEventListener('click', enableAudioPlayback);
+        }
+
+        document.addEventListener('click', enableAudioPlayback);
+    </script>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
