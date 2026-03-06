@@ -39,7 +39,7 @@ function spawnHearts(containerId, count = 14) {
     }
 }
 
-['heartsBg', 'heartsBg2', 'heartsBg3', 'heartsBg4', 'heartsBg5'].forEach(id => spawnHearts(id));
+['heartsBg', 'heartsBg2', 'heartsBg3r', 'heartsBg3', 'heartsBg4', 'heartsBg5'].forEach(id => spawnHearts(id));
 
 // =============================================
 //  AUDIO
@@ -115,7 +115,7 @@ function checkPassword() {
         flashDots('correct');
         msg.textContent = '💕 Yay! Correct!';
         locked = true;
-        transitionTo('screen-passcode', 'screen-gift', 900);
+        transitionTo('screen-passcode', 'screen-remembered', 900);
     } else {
         attempts++;
         flashDots('wrong');
@@ -171,7 +171,14 @@ function startCountdown() {
 }
 
 // =============================================
-//  SCREEN 3 — GIFTBOX
+//  SCREEN 3 — REMEMBERED
+// =============================================
+$('btnOfCourse').addEventListener('click', () => {
+    transitionTo('screen-remembered', 'screen-gift', 100);
+});
+
+// =============================================
+//  SCREEN 4 — GIFTBOX
 // =============================================
 const giftboxWrap = $('giftboxWrap');
 const giftbox = $('giftbox');
@@ -238,7 +245,7 @@ function spawnParticles() {
 }
 
 // =============================================
-//  SCREEN 4 — ENVELOPE
+//  SCREEN 5 — ENVELOPE
 // =============================================
 const envelope = $('envelope');
 let envelopeOpened = false;
